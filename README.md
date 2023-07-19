@@ -28,6 +28,10 @@ Adds a new task to the memoir file.
 memoir add "Title of the task to add"
 ```
 
+### list
+
+Lists all the days with tasks created.
+
 ### show
 
 Show all tasks for a specific day. 
