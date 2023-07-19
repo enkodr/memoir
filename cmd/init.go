@@ -14,7 +14,7 @@ var (
 
 // initCommand is a command line action to initialise memoir
 var initCommand = &cobra.Command{
-	Use:                   "init [path]",
+	Use:                   "init",
 	Short:                 "Initilises memoir in the current directory",
 	Args:                  cobra.MaximumNArgs(1),
 	DisableFlagsInUseLine: true,
