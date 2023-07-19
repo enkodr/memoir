@@ -75,7 +75,7 @@ memoir undo 1 # marks the taks with ID 1 as completed
 Removes a task from the list.
 
 ```bash
-memoir undo 1 # marks the taks with ID 1 as completed
+memoir rm 1 # deletes the taks with ID 1
 ```
 
 ### completion
