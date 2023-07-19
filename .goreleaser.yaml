@@ -1,0 +1,28 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: ./main.go
+    binary: memoir
+    id: memoir
+    env:
+      - CGO_ENABLED=0
+      - GITHUB_TOKEN="test"
+    goarch:
+    - amd64
+    ldflags:
+    - -s
+    - -w
+    - -X github.com/enkodr/memoir/cmd.version={{.Version}}
+    - -X github.com/enkodr/memoir/cmd.gitCommit={{.Commit}}
+    - -X github.com/enkodr/memoir/cmd.buildDate={{.Date}}
+    goos:
+      - linux
+      - darwin
+archives:
+  - id: memoir
+    builds: 
+    - memoir
+    format: binary
+checksum:
+  algorithm: sha256
