@@ -33,10 +33,10 @@ var showCommand = &cobra.Command{
 		}
 
 		dateStr := fmt.Sprintf("Date: %v", m.Today)
-		println(color.InBlue(dateStr))
+		println(color.InBold(color.InBlue((dateStr))))
 
 		for i, task := range m.DailyTasks {
-			print(color.InYellow(i+1), " - ")
+			print("", color.InYellow(i+1), " - ")
 			if task.Done {
 				print(color.InWhite("["), color.InGreen("X"), color.InWhite("]"), " ")
 			} else {

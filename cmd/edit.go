@@ -12,8 +12,8 @@ import (
 )
 
 var editCommand = &cobra.Command{
-	Use:                "edit [nubmer_of_days]",
-	Short:              "Edit the tasks file in default editor",
+	Use:                "edit [number_of_days]",
+	Short:              "Edit the tasks for a specific day in default editor",
 	DisableFlagParsing: true,
 	Run: func(cmd *cobra.Command, args []string) {
 		dateArg := "0"

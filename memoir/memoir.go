@@ -209,6 +209,23 @@ func (m *Memoir) SaveTasks() error {
 	return nil
 }
 
+func (m *Memoir) GetAllDailies() []string {
+	entries, _ := os.ReadDir(filepath.Join(m.Path, dailyDirectory))
+
+	var days []string
+	for _, e := range entries {
+		parts := strings.Split(e.Name(), ".daily.md")
+		days = append(days, parts[0])
+	}
+
+	// Reverse the order
+	for i, j := 0, len(days)-1; i < j; i, j = i+1, j-1 {
+		days[i], days[j] = days[j], days[i]
+	}
+
+	return days
+}
+
 // Get all projects
 // func (m *Memoir) GetProjects() []string {
 // 	// Get all directories within the memoir path
